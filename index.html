@@ -1,0 +1,85 @@
+<html>
+<script language="javascript">
+var prev,oper;
+function num(s)
+{
+var n=parseInt(document.f1.t1.value);
+var sum=(n*10)+s;
+document.f1.t1.value=sum;
+}
+
+function op(k)
+{
+oper=k; 
+prev=parseInt(document.f1.t1.value);
+document.f1.t1.value=0;
+}
+function mod()
+{
+a=parseInt(document.f1.t1.value);
+b=Math.floor(a/10);
+document.f1.t1.value=b;
+
+}
+
+function eq()
+{
+curr=parseInt(document.f1.t1.value);
+switch(oper)
+{
+case 1: var result=prev+curr;break;
+
+case 2: var result=prev-curr;break;
+
+case 3: var result=prev*curr;break;
+
+case 4: var result=prev/curr;break;
+
+case 5: var result=prev%curr;break;
+}
+
+document.f1.t1.value=result;
+}
+</script>
+
+<body >
+<form name="f1">
+<h1 align="center">Basic  Calculator</h1>
+
+<table align="center" bgcolor="cyan" cellspacing="10" cellpadding="20">
+
+<tr><td colspan="4"><input id = "res" type="text" name = "t1" value="0" size="50"></tr>
+
+<tr><td><input id = "1" type="button" value="  1  " onclick="num(1)">
+    <td><input id = "2" type="button" value="  2  " onclick="num(2)">
+    <td><input id = "3" type="button" value="  3  " onclick="num(3)">
+    <td><input id = "add" type="button" value="  +  " onclick="op(1)">
+</tr>
+
+<tr>
+<td><input id = "4" type="button" value="  4  " onclick="num(4)">
+<td><input id = "5" type="button" value="  5  " onclick="num(5)">
+<td><input id = "6" type="button" value="  6  " onclick="num(6)">
+<td><input id = "sub" type="button" value="  -  " onclick="op(2)">
+</tr>
+<tr>
+<td><input id = "7" type="button" value="  7  " onclick="num(7)">
+<td><input id = "8" type="button" value="  8  " onclick="num(8)" >
+<td><input id = "9" type="button" value="  9  " onclick="num(9)">
+<td><input id = "mul" type="button" value="  *  " onclick="op(3)">
+</tr>
+<tr>
+<td><input id = "0" type="button" value="  0 " onclick="num(0)">
+<td><input id = "div" type="button" value="  / " onclick="op(4)">
+<td><input id = "mod" type="button" value="  %  " onclick="op(5)">
+<td><input id = "equ" type="button" value="  =  " onclick="eq()">
+</tr>
+<tr>
+<td colspan="2"><input id = "c" type="reset" value=" c  " ><td>
+<input id = "bs" type="button" value=" <--- " onclick="mod()">
+</tr>
+
+</table>
+</form>
+</body>
+</html>
